@@ -1,6 +1,5 @@
 import { model, Schema } from "mongoose"
 
-// a table cell 
 const TableSchema = new Schema({
     row: Number,
     col: String,

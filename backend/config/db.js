@@ -16,4 +16,10 @@ async function ConnectDB() {
     })
 }
 
+process.on("SIGINT", async () => {
+    await mongoose.connection.close()
+    console.log("MongoDB disconnected on app termination")
+    process.exit(0)
+})
+
 export default ConnectDB

@@ -2,9 +2,10 @@ import React from 'react'
 import TableCell from "./TableCell"
 import "./Highlight.css"
 
-const Row = ({ rowData, rowIdx, setHighlightedRow, highlightedCol, highlightedRow }) => {
+const Row = ({ rowData, rowIdx, setHighlightedRow, highlightedCol, highlightedRow, setHighlightedCol }) => {
   const handleRowHeaderClick = (rowNb) => {
     setHighlightedRow((prev) => (prev === rowNb ? null : rowNb))
+    setHighlightedCol(null)
   }
 
   return (
@@ -12,7 +13,6 @@ const Row = ({ rowData, rowIdx, setHighlightedRow, highlightedCol, highlightedRo
       <th
         scope="row"
         onClick={() => handleRowHeaderClick(rowIdx + 1)}
-        style={{position: "sticky"}}
         className={highlightedRow === rowIdx + 1 ? "highlight-row" : ""}
       >
         {rowIdx + 1}

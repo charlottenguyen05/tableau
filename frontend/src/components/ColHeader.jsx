@@ -1,4 +1,4 @@
-const ColHeader = ({ highlightedCol, setHighlightedCol }) => {
+const ColHeader = ({ highlightedCol, setHighlightedCol, setHighlightedRow}) => {
   const colHeaders = "ABCDEFGHIJ".split("")
 
   return (
@@ -7,8 +7,11 @@ const ColHeader = ({ highlightedCol, setHighlightedCol }) => {
         <th></th>
         {colHeaders.map((col, idx) => (
           <th scope="col"
-            key={idx}
-            onClick={() => setHighlightedCol((prev) => prev === col ? "" : col)}
+            key={col}
+            onClick={() => {
+              setHighlightedCol((prev) => prev === col ? "" : col)
+              setHighlightedRow(null)
+            }}
             className={highlightedCol === col ? "highlight-col-cell" : ""}
           >
             {col}

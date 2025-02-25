@@ -3,6 +3,8 @@ import TableModel from "../models/Table.js"
 import initData from "../initData.js"
 
 const tableRouter = Router()
+
+// Routes for managing table data (fetch, update, reset)
 tableRouter.route("/")
     .get(async (req, res) => {
         try {
@@ -46,7 +48,6 @@ tableRouter.route("/")
                 },
             }))
 
-            // Execute bulkWrite
             await TableModel.bulkWrite(operations)
             res.status(200).json({
                 message: "All records reset to default values."

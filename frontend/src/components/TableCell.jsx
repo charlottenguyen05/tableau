@@ -13,7 +13,6 @@ const TableCell = ({ cellData, highlightedCol }) => {
   const inputRef = useRef(null)
 
 
-  // Automatically focus the input whenever switch to editing mode
   useEffect(() => {
     if (isEditing && inputRef.current) {
       inputRef.current.focus()
@@ -21,7 +20,6 @@ const TableCell = ({ cellData, highlightedCol }) => {
   }, [isEditing])
 
 
-  // When user finishes editing (on blur or pressing Enter), save changes
   const handleInputBlur = async () => {
     if (newValue !== cellData.value) {
       try {
@@ -30,26 +28,30 @@ const TableCell = ({ cellData, highlightedCol }) => {
       } catch (error) {
         console.error("updated failed:", error)
         toast.error("Failed to update cell. Please try again")
+        setNewValue(cellData.value)
       }
     }
     setIsEditing(false)
   }
 
-  // When user click the cell it toggles to edit mode
+
   const handleCellClick = () => {
     setIsEditing(true)
   }
 
-  // Update newValue as user types
+
   const handleInputChange = (e) => {
     setNewValue(e.target.value)
   }
 
-  // If the user presses Enter, blur the input (which triggers saving)
+
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       e.preventDefault()
-      e.target.blur() 
+      e.target.blur()
+    } else if (e.key === "Escape") {
+      setNewValue(cellData.value)
+      setIsEditing(false)
     }
   }
 

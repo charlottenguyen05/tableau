@@ -2,6 +2,8 @@
 
 This project is a full-stack interactive table application built with React for the frontend and Express.js with MongoDB for the backend.
 
+![Tableau Interactif](https://i.imgur.com/pz7ESqJ.png)
+
 ## Prerequisites
 
 - Node.js (v14 or higher)
@@ -35,7 +37,7 @@ This project is a full-stack interactive table application built with React for 
     FRONTEND_BASEURL="http://localhost:5173"
     ```
 
-4. **Seed the database:**
+4. **Seed the database:** (Only for first time run on the machine)
 
     Seed the database with initial data, run:
 
