@@ -1,0 +1,12 @@
+.highlight-row {
+  background-color: #e0f7fa !important;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+
+.highlight-col-cell {
+  background-color: #e8eaf6 !important;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}

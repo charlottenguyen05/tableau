@@ -1,0 +1,53 @@
+/* Table Cell */
+.table-cell {
+  vertical-align: middle;
+  padding: 4px 3px;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  cursor: pointer;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 7rem;
+  hyphens: auto;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Input Editing mode */
+.table-cell-input {
+  border: 1px solid #d76363;
+  border-radius: 6px;
+  display: flex;
+  justify-self: center;
+  outline: none;
+  font-size: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 90%;
+  padding: 5% 2%;
+}
+
+/* Display Mode */
+.table-cell-display {
+  display: flex;
+  justify-content: space-between; 
+  padding: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 95%;
+  height: 100%;
+}
+
+/* Edit Icon */
+.edit-icon {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: #6b7280;
+}
+
+/* Show Edit Icon on Hover */
+.table-cell-display:hover .edit-icon {
+  opacity: 1;
+}
